@@ -1,0 +1,28 @@
+import numpy as np
+import plotly.graph_objects as go
+
+#parameter ghs
+A = 0.05 #Amplitudo dalam meter
+T = 10 #Periode dalam sekon
+t_maks = 100 #waktu total makasimal
+
+#menentukan array waktu 
+t = np.linspace(0, t_maks, 1000)
+
+#menentukan persamaan ghs
+y = A * np.sin((2 * np.pi / T) * t)
+
+#plot grafik
+fig = go.Figure()
+
+#Trace untuk lapangan 
+fig.add_trace(go.Scatter(x=t, y=y, mode="lines", name="Simpangan"))
+
+#costumize tampilan
+fig.update_layout(
+    title="Gerak Harmonik Sederhana",
+    xaxis_title="Waktu",
+    yaxis_title="Amplitudo"
+)
+
+fig.show()
