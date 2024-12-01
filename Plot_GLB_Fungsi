@@ -1,0 +1,21 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+v = 2
+
+def x(t):
+    return v*t
+
+t = np.arange(0, 3600, 1)
+
+y = x(t)
+
+plt.plot(t, y, marker='o', color='b', linestyle='-', label="Grafik GLB")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Grafik GLB")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+*plot_GLB_Fungsi.py*
